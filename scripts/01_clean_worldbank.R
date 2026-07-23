@@ -1,15 +1,17 @@
 library(janitor)
 library(tidyverse)
 
-#HANDLING WORLD BANK DATA
+#LOADING WORLD BANK DATA
+worldbank_venezuela_raw <- read.csv("data/raw/worldbank_venezuela_raw.csv", header = FALSE)
+
 #CLEANING
-worldbankdata_clean <- ffe41b00.ba54.456b.912e.6d9dad87ecfc_Data %>% 
+worldbankdata_clean <- worldbank_venezuela_raw %>% 
   row_to_names(row_number = 1) %>%
   remove_empty(c("rows", "cols")) %>%
   clean_names()
 
 # PIVOTING TO LONG, THEN WIDE
-worldbankdata_final <- worldbankdata_clean %>%
+worldbankdata_clean <- worldbankdata_clean %>%
   pivot_longer(
     cols = -c(country_name, country_code, series_name, series_code),
     names_to = "Year",
@@ -26,10 +28,10 @@ distinct(country_name, country_code, series_name, Year, .keep_all = TRUE) %>%
     values_from = value
   )
 
-worldbankdata_final <- worldbankdata_final %>% 
+worldbankdata_clean <- worldbankdata_clean %>% 
   select(everything(), -"country_name", -"country_code")
 
-worldbankdata_final <- worldbankdata_final %>%
+worldbankdata_clean <- worldbankdata_clean %>%
   mutate(across(
     c(
       `Net migration`, 
@@ -43,6 +45,7 @@ worldbankdata_final <- worldbankdata_final %>%
   ))
 
 # PREVIEWING
-view(worldbankdata_final)
+view(worldbankdata_clean)
 
-#HANDLING UNHCR DATA
+#SAVING PROCESSED DATASET
+saveRDS(worldbankdata_clean, "data/processed/worldbank_venezuela_clean.rds")
