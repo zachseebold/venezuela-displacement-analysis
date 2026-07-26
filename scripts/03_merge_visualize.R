@@ -108,3 +108,10 @@ labs(
   fill = "Legal Status",
   caption = "Source: UNHCR Refugee Data Finder. Author's calculations."
 )
+
+ggsave(
+  filename = "figures/migrant_composition.png",
+  width = 8,
+  height = 6,
+  dpi = 300
+)
