@@ -1,8 +1,4 @@
-# Ignore data
-*.csv
-*.xlsx
-
-# Ignore R settings
+.Rproj.user
 .Rhistory
 .RData
-.Rproj.user/
+.Ruserdata
