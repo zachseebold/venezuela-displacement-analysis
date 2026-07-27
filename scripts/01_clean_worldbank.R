@@ -1,26 +1,24 @@
-#=============================================================
+#------------------------------------------------------------------------------
 #Script: 01_clean_worldbank.R
 #
 # Purpose:
 # Clean World Bank World Development Indicators for Venezuela,
 # reshape into tidy format, and save the processed dataset
-# ============================================================
+#------------------------------------------------------------------------------
 
 library(janitor)
 library(tidyverse)
 
-# LOADING WORLD BANK DATA
 # World Bank exports include metadata before the header row,
 # so import without headers and promote the first row to column names
 worldbank_raw <- read.csv("data/raw/worldbank_venezuela_raw.csv", header = FALSE)
 
-# CLEANING
 worldbank_clean <- worldbank_raw %>% 
   row_to_names(row_number = 1) %>%
   remove_empty(c("rows", "cols")) %>%
   clean_names()
 
-# PIVOTING TO LONG, THEN WIDE
+# Pivoting to long, then wide
 worldbank_clean <- worldbank_clean %>%
   pivot_longer(
     cols = -c(country_name, country_code, series_name, series_code),
@@ -67,10 +65,8 @@ worldbank_clean <- worldbank_clean %>%
     gdp_per_capita = `GDP per capita (current US$)`
   )
 
-# PREVIEWING AND SUMMARIZING
 glimpse(worldbank_clean)
 worldbank_clean %>%
   summarise(across(everything(), ~sum(is.na(.))))
 
-# SAVING PROCESSED DATASET
 saveRDS(worldbank_clean, "data/processed/worldbank_venezuela_clean.rds")
