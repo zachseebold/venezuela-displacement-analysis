@@ -128,8 +128,7 @@ ggsave(
 # persons of concern by legal status
 #------------------------------------------------------------------------------
 composition_percentage_plot <- ggplot(
-  migrant_composition %>% 
-    filter(year >= 2016),
+  migrant_composition,
     aes(
       x = year,
       y = count,
@@ -144,12 +143,12 @@ composition_percentage_plot <- ggplot(
     labels = scales::percent
   ) +
   scale_x_continuous(
-    breaks = 2016:2025
+    breaks = seq(2006, 2025, by = 2) 
   ) +
   plot_theme +
   labs(
     title = "Composition of Persons of Concern by Legal Status",
-    subtitle = "UNHCR persons of concern of Venezuelan origin, 2016-2025",
+    subtitle = "UNHCR persons of concern of Venezuelan origin, 2006-2025",
     x = "Year",
     y = "% of Persons of Concern",
     fill = "Legal Status",
