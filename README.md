@@ -1,6 +1,6 @@
 # Macroeconomic Collapse and the Delayed Displacement of Venezuelan Populations (2006–2025)
 
-This project explores the temporal delay between macroeconomic collapse and forced displacement in Venezuela from 2006 to 2025 using UNHCR Refugee Data Finder statistics and World Bank Development Indicators in an ordinary least squares regression across dynamic lag horizons. It explores lagged associations between economic conditions and displacement patterns without making causal claims.
+Inspired by my internship with the International Rescue Committee's Assistance for Migrants Program, this project explores the temporal delay between macroeconomic collapse and forced displacement in Venezuela from 2006 to 2025 using UNHCR Refugee Data Finder statistics and World Bank Development Indicators in an ordinary least squares regression across dynamic lag horizons. It explores lagged associations between economic conditions and displacement patterns without making causal claims.
 
 <img width="3600" height="1800" alt="economic_displacement_patchwork" src="https://github.com/user-attachments/assets/3b05308f-379d-440e-9e11-b1c6859bdb53" />
 
