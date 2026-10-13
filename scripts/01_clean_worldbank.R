@@ -5,7 +5,6 @@
 # Clean World Bank World Development Indicators for Venezuela,
 # reshape into tidy format, and save the processed dataset
 #------------------------------------------------------------------------------
-
 library(janitor)
 library(tidyverse)
 
@@ -67,6 +66,6 @@ worldbank_clean <- worldbank_clean %>%
 
 glimpse(worldbank_clean)
 worldbank_clean %>%
-  summarise(across(everything(), ~sum(is.na(.))))
+  summarize(across(everything(), ~sum(is.na(.))))
 
 saveRDS(worldbank_clean, "data/processed/worldbank_venezuela_clean.rds")

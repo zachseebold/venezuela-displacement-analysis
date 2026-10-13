@@ -5,7 +5,6 @@
 # Merge World Bank and UNHCR datasets,
 # derive additional variables and prepare for analysis
 #------------------------------------------------------------------------------
-
 library(tidyverse)
 library(scales)
 library(ggrepel)
@@ -15,7 +14,6 @@ library(patchwork)
 #------------------------------------------------------------------------------
 # Create plotting theme
 #------------------------------------------------------------------------------
-
 status_colors <- c(
   "Refugees" = "#525174",
   "Asylum Seekers" = "#348aa7",

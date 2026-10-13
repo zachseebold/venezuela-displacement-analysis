@@ -4,7 +4,6 @@
 # Purpose:
 # Clean UNHCR Refugee Data Finder statistics for Venezuela and save the processed dataset
 #------------------------------------------------------------------------------
-
 library(janitor)
 library(tidyverse)
 
@@ -32,6 +31,6 @@ unhcr_clean <- unhcr_raw %>%
 
 glimpse(unhcr_clean)
 unhcr_clean %>%
-  summarise(across(everything(), ~sum(is.na(.))))
+  summarize(across(everything(), ~sum(is.na(.))))
 
 saveRDS(unhcr_clean, "data/processed/unhcr_venezuela_clean.rds")
