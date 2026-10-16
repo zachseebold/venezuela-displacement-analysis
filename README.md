@@ -19,7 +19,7 @@ The analysis pipeline consists of four scripts:
 * `01_clean_worldbank.R`: Cleans World Bank Development Indicators data (annual GDP growth, GDP per capita).
 * `02_clean_unhcr.R`: Cleans UNHCR Refugee Data Finder data across legal status categories (refugees, asylum seekers, other protection, others of concern).
 * `03_merge_visualize.R`: Merges datasets, executes dynamic OLS lag models, and generates visualizations.
-* `04_clean_visualize_livelihood.R`: Cleans Premise Mobile open-source survey data, executes a pooled OLS and LPM with fixed effects, generates visualization.
+* `04_clean_visualize_livelihood.R`: Cleans Premise Mobile open-source survey data, executes a pooled OLS and LPM with fixed effects, and visualizes the LPM.
 
 ------------------------------------------------------------------------------
 

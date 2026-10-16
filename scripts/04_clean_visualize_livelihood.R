@@ -183,7 +183,7 @@ p4_dataframe <- as.data.frame(coeftable(p4)) %>%
       "aid_100_food"      ~ "100% of Remittance Spent on Food",
       "clap_insufficient" ~ "Quantity of Food from CLAP Box Insufficient",
       "clap_spoiled"      ~ "Has Received Spoiled Food from CLAP Box",
-      "is_unemployed"     ~ "Head of Household is Unemployed"
+      "is_unemployed"     ~ "Respondent is Unemployed"
     ),
   model = term
   )
@@ -193,7 +193,7 @@ driver_colors <- c(
   "100% of Remittance Spent on Food" = "#525174",
   "Quantity of Food from CLAP Box Insufficient" = "#348aa7",
   "Has Received Spoiled Food from CLAP Box" = "#5dd39e",
-  "Head of Household is Unemployed" = "#bce784"
+  "Respondent is Unemployed" = "#bce784"
 )
 
 micro_drivers_plot <- dwplot(
